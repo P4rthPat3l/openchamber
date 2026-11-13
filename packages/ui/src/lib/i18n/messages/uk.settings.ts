@@ -2777,4 +2777,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'Не вдалося увімкнути агента: не вийшло записати його конфіг',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Пошук в історії запитів",
 
+  'settings.layout.chat.section.usageLine': "Рядок використання",
+  'settings.openchamber.visual.field.composerUsageLine': "Показувати використання під полем введення",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Показує вартість сесії, вікна квоти постачальника та заповнення контексту під полем введення, навіть коли панель Work status відкрита.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Показувати рядок використання під полем введення",
 } as const;

@@ -2778,4 +2778,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'Nie udało się włączyć agenta: nie można zapisać jego pliku konfiguracji',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Przeszukaj historię poleceń",
 
+  'settings.layout.chat.section.usageLine': "Wiersz użycia",
+  'settings.openchamber.visual.field.composerUsageLine': "Pokaż użycie pod polem wprowadzania",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Pokazuje koszt sesji, okna limitu dostawcy i zapełnienie kontekstu pod polem wprowadzania, także przy otwartym panelu Work status.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Pokaż wiersz użycia pod polem wprowadzania",
 };

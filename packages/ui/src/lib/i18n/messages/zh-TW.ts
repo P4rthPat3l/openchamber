@@ -4009,4 +4009,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ 瀏覽 · Enter 載入 · Esc 關閉",
   'helpDialog.item.searchPromptHistory': "搜尋提示歷史記錄（聊天輸入）",
 
+  'chat.composerUsage.aria': "輸入框使用情況",
+  'chat.composerUsage.pin': '將{provider}固定至輸入框',
+  'chat.composerUsage.unpin': '取消將{provider}固定至輸入框',
+  'chat.composerUsage.pinFailed': '無法儲存固定的供應商。請重試。',
+  'chat.composerUsage.otherProviders': '其他{count}個',
+  'chat.composerUsage.settings': '使用情況設定',
+  'chat.composerUsage.emptyAt': '預計{time}用盡',
 };

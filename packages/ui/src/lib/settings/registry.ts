@@ -437,6 +437,8 @@ export const SETTINGS_REGISTRY = {
     ui: uiStore('workStatusSectionOrderExplicit', (value) => useUIStore.setState({ workStatusSectionOrderExplicit: value })),
   }),
   workStatusPanelEnabled: field({ scope: 'profile', parse: parseBoolean, ui: uiStore('workStatusPanelEnabled', (v) => useUIStore.getState().setWorkStatusPanelEnabled(v)) }),
+  composerUsageLineEnabled: field({ scope: 'profile', parse: parseBoolean, ui: uiStore('composerUsageLineEnabled', (v) => useUIStore.getState().setComposerUsageLineEnabled(v)) }),
+  composerUsagePinnedProviders: field({ scope: 'profile', parse: parseStringList, ui: uiStore('composerUsagePinnedProviders', (v) => useUIStore.getState().setComposerUsagePinnedProviders(v), { autoSave: false }) }),
   workStatusHiddenSections: field({
     scope: 'profile',
     parse: parseWorkStatusHiddenSections,

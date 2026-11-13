@@ -2777,4 +2777,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': '無法啟用代理：無法寫入其設定檔',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "搜尋提示歷史記錄",
 
+  'settings.layout.chat.section.usageLine': "使用情況列",
+  'settings.openchamber.visual.field.composerUsageLine': "在輸入框下方顯示使用情況",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "在輸入框下方顯示工作階段費用、提供者的配額視窗和上下文佔用，即使 Work status 面板已開啟。",
+  'settings.openchamber.visual.field.composerUsageLineAria': "在輸入框下方顯示使用情況列",
 } as const;

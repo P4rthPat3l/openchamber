@@ -398,6 +398,12 @@
     "workStatusPanelEnabled": {
       "scope": "profile"
     },
+    "composerUsageLineEnabled": {
+      "scope": "profile"
+    },
+    "composerUsagePinnedProviders": {
+      "scope": "profile"
+    },
     "workStatusHiddenSections": {
       "scope": "profile"
     },

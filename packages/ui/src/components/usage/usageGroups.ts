@@ -32,8 +32,10 @@ export type UsageProviderGroup = {
  *
  * Include selected, configured providers and first-load failures whose
  * configuration is still unknown. Confirmed unconfigured providers stay hidden.
+ * The footer requests `all` for its full popover: every model and every window,
+ * independent of the compact surfaces' visibility and model selections.
  */
-export const useUsageProviderGroups = (): UsageProviderGroup[] => {
+export const useUsageProviderGroups = (scope: 'visible' | 'all' = 'visible'): UsageProviderGroup[] => {
   const { t } = useI18n();
   const quotaResults = useQuotaStore((state) => state.results);
   const refreshErrors = useQuotaStore((state) => state.refreshErrors);
@@ -44,7 +46,7 @@ export const useUsageProviderGroups = (): UsageProviderGroup[] => {
   return React.useMemo<UsageProviderGroup[]>(() => {
     const resultsByProvider = new Map(quotaResults.map((result) => [result.providerId, result]));
     return providers
-      .filter((providerMeta) => dropdownProviderIds.includes(providerMeta.id))
+      .filter((providerMeta) => scope === 'all' || dropdownProviderIds.includes(providerMeta.id))
       .filter((providerMeta) => {
         const result = resultsByProvider.get(providerMeta.id);
         return result?.configured === true || (!result && Boolean(refreshErrors[providerMeta.id]));
@@ -59,17 +61,18 @@ export const useUsageProviderGroups = (): UsageProviderGroup[] => {
 
         const modelEntries = Object.entries(result?.usage?.models ?? {});
         const providerSelectedModels = selectedQuotaModels[providerMeta.id] ?? [];
-        const visibleModelEntries = selectVisibleModelEntries(providerMeta.id, modelEntries, providerSelectedModels);
+        const visibleModelEntries = scope === 'all' ? modelEntries : selectVisibleModelEntries(providerMeta.id, modelEntries, providerSelectedModels);
         for (const [modelName, modelUsage] of visibleModelEntries) {
           const entries = Object.entries(modelUsage.windows ?? {});
-          if (entries.length === 0) continue;
-          const [label, window] = entries[0];
-          rows.push({
-            key: `model-${modelName}-${label}`,
-            label: formatWindowLabel(label),
-            subtitle: getDisplayModelName(modelName),
-            window,
-          });
+          const windowEntries = scope === 'all' ? entries : entries.slice(0, 1);
+          for (const [label, window] of windowEntries) {
+            rows.push({
+              key: `model-${modelName}-${label}`,
+              label: formatWindowLabel(label),
+              subtitle: getDisplayModelName(modelName),
+              window,
+            });
+          }
         }
 
         const refreshError = refreshErrors[providerMeta.id];
@@ -93,5 +96,5 @@ export const useUsageProviderGroups = (): UsageProviderGroup[] => {
           status,
         };
       });
-  }, [dropdownProviderIds, providers, quotaResults, refreshErrors, selectedQuotaModels, t]);
+  }, [dropdownProviderIds, providers, quotaResults, refreshErrors, scope, selectedQuotaModels, t]);
 };

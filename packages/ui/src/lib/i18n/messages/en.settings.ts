@@ -2767,4 +2767,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'Couldn\'t enable the agent: its config file could not be written',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Search prompt history",
 
+  'settings.layout.chat.section.usageLine': "Usage line",
+  'settings.openchamber.visual.field.composerUsageLine': "Show usage under the composer",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Shows the session's cost, the provider's quota windows and the context fill under the composer, including while the work status panel is open.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Show the usage line under the composer",
 } as const;

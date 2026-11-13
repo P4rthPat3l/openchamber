@@ -4010,4 +4010,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ 浏览 · Enter 加载 · Esc 关闭",
   'helpDialog.item.searchPromptHistory': "搜索提示历史记录（聊天输入）",
 
+  'chat.composerUsage.aria': "输入框使用情况",
+  'chat.composerUsage.pin': '将{provider}固定到输入框',
+  'chat.composerUsage.unpin': '取消将{provider}固定到输入框',
+  'chat.composerUsage.pinFailed': '无法保存固定的提供商。请重试。',
+  'chat.composerUsage.otherProviders': '其他{count}个',
+  'chat.composerUsage.settings': '使用情况设置',
+  'chat.composerUsage.emptyAt': '预计{time}用尽',
 };

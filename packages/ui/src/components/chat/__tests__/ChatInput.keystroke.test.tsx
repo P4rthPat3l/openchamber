@@ -320,6 +320,7 @@ afterAll(() => {
  */
 const TEXT_INDEPENDENT_CHILDREN = [
   'ComposerFooterView',
+  'ComposerUsageLineView',
   'ComposerAutocompletePopupsView',
   'PermissionDockView',
   'FormDockView',

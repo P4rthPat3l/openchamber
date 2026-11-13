@@ -3,14 +3,9 @@ import React from 'react';
 import { useSubagentCostRollup } from '@/components/chat/work-status/useSubagentCostRollup';
 import { useI18n } from '@/lib/i18n';
 import { formatMoney } from '@/lib/money';
+import { formatTokens } from '@/lib/tokens';
 import { cn } from '@/lib/utils';
 import { useCurrentContextReading } from './useCurrentContextReading';
-
-const formatTokens = (tokens: number): string => {
-  if (tokens >= 1_000_000) return `${(tokens / 1_000_000).toFixed(1)}M`;
-  if (tokens >= 1_000) return `${(tokens / 1_000).toFixed(1)}K`;
-  return String(tokens);
-};
 
 const RING_SIZE = 18;
 const RING_STROKE = 2;

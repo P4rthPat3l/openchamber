@@ -2777,4 +2777,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'No se pudo activar el agente: no se pudo escribir su archivo de configuración',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Buscar en el historial de indicaciones",
 
+  'settings.layout.chat.section.usageLine': "Línea de uso",
+  'settings.openchamber.visual.field.composerUsageLine': "Mostrar el uso bajo el compositor",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Muestra el coste de la sesión, las ventanas de cuota del proveedor y el uso del contexto bajo el compositor, incluso con el panel Work status abierto.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Mostrar la línea de uso bajo el compositor",
 } as const;

@@ -4007,4 +4007,11 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ ile gezin · Enter ile yükle · Esc ile kapat",
   'helpDialog.item.searchPromptHistory': "İstem geçmişinde ara (sohbet girişi)",
 
+  'chat.composerUsage.aria': "Yazma alanı kullanımı",
+  'chat.composerUsage.pin': '{provider} sağlayıcısını yazma alanına sabitle',
+  'chat.composerUsage.unpin': '{provider} sağlayıcısını yazma alanından kaldır',
+  'chat.composerUsage.pinFailed': 'Sabitlenen sağlayıcılar kaydedilemedi. Tekrar deneyin.',
+  'chat.composerUsage.otherProviders': '{count} tane daha',
+  'chat.composerUsage.settings': 'Kullanım ayarları',
+  'chat.composerUsage.emptyAt': 'Tükenme {time}',
 };

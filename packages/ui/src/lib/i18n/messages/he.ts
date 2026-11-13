@@ -4034,4 +4034,11 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ לעיון · Enter לטעינה · Esc לסגירה",
   'helpDialog.item.searchPromptHistory': "חיפוש בהיסטוריית ההנחיות (קלט צ׳אט)",
 
+  'chat.composerUsage.aria': "שימוש בתיבת הכתיבה",
+  'chat.composerUsage.pin': 'הצמדת {provider} לתיבת הכתיבה',
+  'chat.composerUsage.unpin': 'ביטול הצמדת {provider} לתיבת הכתיבה',
+  'chat.composerUsage.pinFailed': 'לא ניתן לשמור את הספקים המוצמדים. נסו שוב.',
+  'chat.composerUsage.otherProviders': 'ספקים נוספים: {count}',
+  'chat.composerUsage.settings': 'הגדרות שימוש',
+  'chat.composerUsage.emptyAt': 'ייגמר {time}',
 } as const;

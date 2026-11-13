@@ -4014,4 +4014,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ aby przeglądać · Enter aby wczytać · Esc aby zamknąć",
   'helpDialog.item.searchPromptHistory': "Przeszukaj historię poleceń (pole czatu)",
 
+  'chat.composerUsage.aria': "Użycie w polu wprowadzania",
+  'chat.composerUsage.pin': 'Przypnij {provider} do pola wprowadzania',
+  'chat.composerUsage.unpin': 'Odepnij {provider} od pola wprowadzania',
+  'chat.composerUsage.pinFailed': 'Nie udało się zapisać przypiętych dostawców. Spróbuj ponownie.',
+  'chat.composerUsage.otherProviders': 'Więcej: {count}',
+  'chat.composerUsage.settings': 'Ustawienia użycia',
+  'chat.composerUsage.emptyAt': 'Wyczerpanie {time}',
 } as const;

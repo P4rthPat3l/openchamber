@@ -1,23 +1,15 @@
 import React from 'react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import { useI18n } from '@/lib/i18n';
-import { resolveUsageTone } from '@/lib/quota';
 import { cn } from '@/lib/utils';
 import { normalizeContextPanelDirectoryKey, useUIStore } from '@/stores/useUIStore';
 import { useEffectiveDirectory } from '@/hooks/useEffectiveDirectory';
 import { shownContextModes } from '@/lib/workspace/zones';
 import { ContextRailTooltipDetails, ContextRing } from './ContextRailUsage';
+import { contextRingTone } from './contextRingTone';
 import { useCurrentContextReading } from './useCurrentContextReading';
 
 const UNKNOWN_PERCENT = '—';
-
-// Neutral until the warning threshold, as the Session card's meter: green
-// means finished, and a context in use is not.
-const TONE_COLOR = {
-  safe: 'var(--muted-foreground)',
-  warn: 'var(--status-warning)',
-  critical: 'var(--status-error)',
-} as const;
 
 /**
  * The header's context fill: a ring in the fill's tone and the percent, the
@@ -44,8 +36,7 @@ const HeaderContextUsageComponent: React.FC<{ buttonClassName: string }> = ({ bu
   }
 
   const percent = fill.state === 'measured' ? (fill.totalTokens / limit) * 100 : null;
-  // Rounded for the tone, as the Work Status meter does, so both turn together.
-  const arcColor = percent === null ? undefined : TONE_COLOR[resolveUsageTone(Math.round(percent))];
+  const arcColor = percent === null ? undefined : contextRingTone(percent);
 
   return (
     <Tooltip>

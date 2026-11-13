@@ -4034,4 +4034,11 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ للتصفح · Enter للتحميل · Esc للإغلاق",
   'helpDialog.item.searchPromptHistory': "البحث في سجل المطالبات (إدخال الدردشة)",
 
+  'chat.composerUsage.aria': "استخدام المحرر",
+  'chat.composerUsage.pin': 'تثبيت {provider} بجانب المحرر',
+  'chat.composerUsage.unpin': 'إلغاء تثبيت {provider} من جانب المحرر',
+  'chat.composerUsage.pinFailed': 'تعذر حفظ مزودي الخدمة المثبتين. حاول مجدداً.',
+  'chat.composerUsage.otherProviders': 'مزودون آخرون: {count}',
+  'chat.composerUsage.settings': 'إعدادات الاستخدام',
+  'chat.composerUsage.emptyAt': 'ينفد {time}',
 } as const;

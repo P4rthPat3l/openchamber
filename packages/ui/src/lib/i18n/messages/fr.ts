@@ -4008,4 +4008,11 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ pour parcourir · Enter pour charger · Esc pour fermer",
    'helpDialog.item.searchPromptHistory': "Rechercher dans l'historique des prompts (saisie du chat)",
 
+  'chat.composerUsage.aria': "Utilisation du compositeur",
+  'chat.composerUsage.pin': 'Épingler {provider} au compositeur',
+  'chat.composerUsage.unpin': 'Détacher {provider} du compositeur',
+  'chat.composerUsage.pinFailed': 'Impossible de sauvegarder les fournisseurs épinglés. Réessayez.',
+  'chat.composerUsage.otherProviders': '{count} de plus',
+  'chat.composerUsage.settings': "Paramètres d’utilisation",
+  'chat.composerUsage.emptyAt': 'Épuisé {time}',
 } as const;

@@ -374,6 +374,8 @@ const ComposerTab: React.FC = () => {
   const setLargeTextPasteBehavior = useUIStore((state) => state.setLargeTextPasteBehavior);
   const allowPromptingSubagentSessions = useUIStore((state) => state.allowPromptingSubagentSessions);
   const setAllowPromptingSubagentSessions = useUIStore((state) => state.setAllowPromptingSubagentSessions);
+  const composerUsageLineEnabled = useUIStore((state) => state.composerUsageLineEnabled);
+  const setComposerUsageLineEnabled = useUIStore((state) => state.setComposerUsageLineEnabled);
   const savePastedImagesAsFiles = useUIStore((state) => state.savePastedImagesAsFiles);
   const setSavePastedImagesAsFiles = useUIStore((state) => state.setSavePastedImagesAsFiles);
   const inputSpellcheckEnabled = useUIStore((state) => state.inputSpellcheckEnabled);
@@ -484,6 +486,17 @@ const ComposerTab: React.FC = () => {
             settingsItem="chat.save-pasted-images"
           />
         </div>
+      </SettingsSection>
+
+      <SettingsSection title={t('settings.layout.chat.section.usageLine')} contentClassName={SETTINGS_OPTION_STACK_CLASS}>
+        <SettingsCheckboxRow
+          checked={composerUsageLineEnabled}
+          onChange={setComposerUsageLineEnabled}
+          label={t('settings.openchamber.visual.field.composerUsageLine')}
+          ariaLabel={t('settings.openchamber.visual.field.composerUsageLineAria')}
+          info={t('settings.openchamber.visual.field.composerUsageLineInfo')}
+          settingsItem="chat.composer-usage-line"
+        />
       </SettingsSection>
 
       <SettingsSection title={t('settings.layout.chat.section.draftsAndHistory')} contentClassName="space-y-3">

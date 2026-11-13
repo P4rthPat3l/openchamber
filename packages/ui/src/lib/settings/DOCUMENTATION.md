@@ -41,6 +41,12 @@
 
 `selectionApprovalText` is a shared profile preference for the selection approval shortcut. An empty string means no custom text; older documents can omit the field. The setting stores only the override and does not define fallback message text or dispatch behavior.
 
+`composerUsagePinnedProviders` is a separate profile preference for the footer's
+provider pins. Its explicit writer publishes only a confirmed save, so it opts
+out of store auto-save. Missing fields preserve the current pins; an empty list
+clears them. It never changes `usageDropdownProviders`, which other usage areas
+share.
+
 ## Decisions
 
 ### Why the Settings view passes its voice availability snapshot

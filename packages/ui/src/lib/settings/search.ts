@@ -574,6 +574,12 @@ const SETTINGS_SEARCH_ITEMS: readonly SettingsSearchItem[] = [
     isAvailable: (ctx) => !ctx.isVSCode,
   },
   {
+    id: 'chat.composer-usage-line',
+    page: 'chat',
+    titleKey: 'settings.openchamber.visual.field.composerUsageLine',
+    keywords: ['usage', 'quota', 'limit', 'provider', 'composer', 'cost', 'spend', 'context'],
+  },
+  {
     id: 'chat.composer',
     page: 'chat',
     titleKey: 'settings.layout.chat.section.sending',

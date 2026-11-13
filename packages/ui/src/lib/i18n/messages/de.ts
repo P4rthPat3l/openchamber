@@ -4007,4 +4007,11 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ zum Durchsuchen · Enter zum Laden · Esc zum Schließen",
   'helpDialog.item.searchPromptHistory': "Prompt-Verlauf durchsuchen (Chat-Eingabe)",
 
+  'chat.composerUsage.aria': "Nutzung im Eingabebereich",
+  'chat.composerUsage.pin': '{provider} im Eingabebereich anheften',
+  'chat.composerUsage.unpin': '{provider} aus dem Eingabebereich lösen',
+  'chat.composerUsage.pinFailed': 'Angeheftete Anbieter konnten nicht gespeichert werden. Erneut versuchen.',
+  'chat.composerUsage.otherProviders': '{count} weitere',
+  'chat.composerUsage.settings': 'Nutzungseinstellungen',
+  'chat.composerUsage.emptyAt': 'Leer {time}',
 };

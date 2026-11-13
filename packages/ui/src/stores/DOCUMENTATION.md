@@ -103,7 +103,9 @@ shown quota readout. A header button, cached results, and a closed popover do no
 create demand. Work status passes its panel visibility through the section list,
 including the transition period before its content unmounts. Its collapsed Usage
 heading still shows a quota, so it remains a readout. Settings Usage requests all
-providers; other readouts request the user's enabled dropdown providers.
+providers; the composer's usage footer also requests all providers, because its
+current-provider and independent pin selection can include a provider hidden from
+Work Status. Other readouts request the user's enabled dropdown providers.
 If Work status discovers no configured providers, it renders nothing and releases
 its demand until a credential change invalidates that discovery. An enabled native
 tray seeds the dropdown providers once after runtime initialization when no sample

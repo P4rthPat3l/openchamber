@@ -4010,4 +4010,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ para explorar · Enter para cargar · Esc para cerrar",
   'helpDialog.item.searchPromptHistory': "Buscar en el historial de indicaciones (entrada de chat)",
 
+  'chat.composerUsage.aria': "Uso del compositor",
+  'chat.composerUsage.pin': 'Fijar {provider} en el compositor',
+  'chat.composerUsage.unpin': 'Desfijar {provider} del compositor',
+  'chat.composerUsage.pinFailed': 'No se pudieron guardar los proveedores fijados. Inténtalo de nuevo.',
+  'chat.composerUsage.otherProviders': '{count} más',
+  'chat.composerUsage.settings': 'Ajustes de uso',
+  'chat.composerUsage.emptyAt': 'Se agota {time}',
 };

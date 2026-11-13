@@ -24,6 +24,29 @@ import { renderSettingsRegistrySnapshot, SETTINGS_REGISTRY_SNAPSHOT_PATHS } from
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..', '..', '..', '..');
 
 describe('settings registry', () => {
+  test('AC-015: composer pins persist independently and missing fields preserve them', () => {
+    const original = useUIStore.getState();
+    try {
+      expect(useUIStore.getInitialState().composerUsagePinnedProviders).toEqual([]);
+      const parsed = parseSettingsDocument({ composerUsagePinnedProviders: ['claude', 'ext-example'] });
+      expect(parsed).toEqual({ composerUsagePinnedProviders: ['claude', 'ext-example'] });
+      if (!parsed) throw new Error('Expected valid composer pins');
+      applySettingsToStores(parsed);
+      applySettingsToStores({});
+      expect(useUIStore.getState().composerUsagePinnedProviders).toEqual(['claude', 'ext-example']);
+      expect(SETTINGS_REGISTRY.composerUsagePinnedProviders.scope).toBe('profile');
+      expect(AUTO_SAVE_KEYS).not.toContain('composerUsagePinnedProviders');
+      const partialize = useUIStore.persist.getOptions().partialize;
+      expect(partialize?.(useUIStore.getState())).toMatchObject({ composerUsagePinnedProviders: ['claude', 'ext-example'] });
+      applySettingsToStores({ composerUsagePinnedProviders: [] });
+      expect(useUIStore.getState().composerUsagePinnedProviders).toEqual([]);
+      expect(parseSettingsDocument({ composerUsagePinnedProviders: 'claude' })).toEqual({});
+      expect(useUIStore.getState().composerUsageLineEnabled).toBe(original.composerUsageLineEnabled);
+    } finally {
+      useUIStore.setState(original, true);
+    }
+  });
+
   test('round-trips custom selection approval text and clearing it without resetting omitted preferences', async () => {
     const options = useUIStore.persist.getOptions();
     const original = useUIStore.getState();

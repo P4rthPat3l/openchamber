@@ -2767,4 +2767,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'De agent kon niet worden ingeschakeld: het configuratiebestand kon niet worden geschreven',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Promptgeschiedenis doorzoeken",
 
+  'settings.layout.chat.section.usageLine': "Gebruiksregel",
+  'settings.openchamber.visual.field.composerUsageLine': "Gebruik onder de invoer tonen",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Toont de kosten van de sessie, de quotumvensters van de provider en de contextvulling onder de invoer, ook wanneer het Work status-paneel open is.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "De gebruiksregel onder de invoer tonen",
 } as const;

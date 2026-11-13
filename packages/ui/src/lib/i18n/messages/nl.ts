@@ -4009,4 +4009,11 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ om te bladeren · Enter om te laden · Esc om te sluiten",
   'helpDialog.item.searchPromptHistory': "Promptgeschiedenis doorzoeken (chatinvoer)",
 
+  'chat.composerUsage.aria': "Gebruik van de invoer",
+  'chat.composerUsage.pin': '{provider} vastzetten bij de invoer',
+  'chat.composerUsage.unpin': '{provider} losmaken van de invoer',
+  'chat.composerUsage.pinFailed': 'Vastgezette aanbieders konden niet worden opgeslagen. Probeer het opnieuw.',
+  'chat.composerUsage.otherProviders': '{count} meer',
+  'chat.composerUsage.settings': 'Gebruiksinstellingen',
+  'chat.composerUsage.emptyAt': 'Op {time}',
 } as const;

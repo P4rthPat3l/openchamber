@@ -2777,4 +2777,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'Não foi possível ativar o agente: o arquivo de configuração não pôde ser gravado',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Pesquisar histórico de prompts",
 
+  'settings.layout.chat.section.usageLine': "Linha de uso",
+  'settings.openchamber.visual.field.composerUsageLine': "Mostrar o uso abaixo do compositor",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Mostra o custo da sessão, as janelas de cota do provedor e o uso do contexto sob o compositor, mesmo com o painel Work status aberto.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Mostrar a linha de uso abaixo do compositor",
 } as const;
