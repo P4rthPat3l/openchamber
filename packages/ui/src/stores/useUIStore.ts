@@ -919,6 +919,10 @@ interface UIStore {
   workStatusScrollTop: number;
   /** Whether the in-chat work-status panel may render at all. */
   workStatusPanelEnabled: boolean;
+  /** Whether the usage line under the composer may render at all. */
+  composerUsageLineEnabled: boolean;
+  /** Composer-only pins, independent of Work Status and tray provider visibility. */
+  composerUsagePinnedProviders: string[];
   /**
    * Whether it is actually on screen right now — the switch can be on while
    * layout still refuses it (narrow chat, open context panel). Transient, never
@@ -1299,6 +1303,8 @@ interface UIStore {
   setMessageQueueExpanded: (expanded: boolean) => void;
   setWorkStatusScrollTop: (scrollTop: number) => void;
   setWorkStatusPanelEnabled: (enabled: boolean) => void;
+  setComposerUsageLineEnabled: (enabled: boolean) => void;
+  setComposerUsagePinnedProviders: (providers: string[]) => void;
   setWorkStatusPanelVisible: (visible: boolean) => void;
   setWorkStatusPanelFits: (fits: boolean) => void;
   setWorkStatusOverlayOpen: (open: boolean) => void;
@@ -1585,6 +1591,8 @@ export const useUIStore = create<UIStore>()(
         messageQueueExpanded: false,
         workStatusScrollTop: 0,
         workStatusPanelEnabled: true,
+        composerUsageLineEnabled: true,
+        composerUsagePinnedProviders: [],
         workStatusPanelVisible: false,
         workStatusPanelFits: false,
         workStatusOverlayOpen: false,
@@ -2408,6 +2416,14 @@ export const useUIStore = create<UIStore>()(
 
         setWorkStatusPanelEnabled: (enabled) => {
           set({ workStatusPanelEnabled: enabled });
+        },
+
+        setComposerUsageLineEnabled: (enabled) => {
+          set({ composerUsageLineEnabled: enabled });
+        },
+
+        setComposerUsagePinnedProviders: (providers) => {
+          set({ composerUsagePinnedProviders: providers });
         },
 
         setWorkStatusPanelVisible: (visible) => {
@@ -3937,6 +3953,8 @@ export const useUIStore = create<UIStore>()(
           messageQueueExpanded: state.messageQueueExpanded,
           workStatusScrollTop: state.workStatusScrollTop,
           workStatusPanelEnabled: state.workStatusPanelEnabled,
+          composerUsageLineEnabled: state.composerUsageLineEnabled,
+          composerUsagePinnedProviders: state.composerUsagePinnedProviders,
           workStatusHiddenSections: state.workStatusHiddenSections,
           workStatusSectionOrder: state.workStatusSectionOrder,
           workStatusSectionOrderExplicit: state.workStatusSectionOrderExplicit,

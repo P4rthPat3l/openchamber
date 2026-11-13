@@ -4009,4 +4009,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ で閲覧 · Enter で読み込み · Esc で閉じる",
   'helpDialog.item.searchPromptHistory': "プロンプト履歴を検索（チャット入力）",
 
+  'chat.composerUsage.aria': "コンポーザーの使用状況",
+  'chat.composerUsage.pin': '{provider}を入力欄に固定',
+  'chat.composerUsage.unpin': '{provider}の入力欄への固定を解除',
+  'chat.composerUsage.pinFailed': '固定するプロバイダーを保存できませんでした。もう一度お試しください。',
+  'chat.composerUsage.otherProviders': 'ほか{count}件',
+  'chat.composerUsage.settings': '使用状況の設定',
+  'chat.composerUsage.emptyAt': '{time}に使い切る見込み',
 };

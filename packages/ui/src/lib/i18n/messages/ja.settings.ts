@@ -2777,4 +2777,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'エージェントを有効にできませんでした。設定ファイルに書き込めませんでした',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "プロンプト履歴を検索",
 
+  'settings.layout.chat.section.usageLine': "使用状況の行",
+  'settings.openchamber.visual.field.composerUsageLine': "コンポーザーの下に使用状況を表示",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "セッションのコスト、プロバイダーのクォータ枠、コンテキストの使用量を、Work status パネルを開いている間も含めてコンポーザーの下に表示します。",
+  'settings.openchamber.visual.field.composerUsageLineAria': "コンポーザーの下に使用状況の行を表示",
 } as const;

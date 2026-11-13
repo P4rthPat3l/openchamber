@@ -79,6 +79,10 @@ context while the card shows the same figure was rejected: the reading then
 jumps between two places as panels open and close, and the user has to look
 for it each time.
 
+The composer's usage line shows the context fill as the last pill of its
+centered cluster, for the composer's own session, with a popover rather than
+the panel. Its rules are in `../composer/usage/DOCUMENTATION.md`.
+
 ### Why the card docks beside the panel instead of floating over the chat
 
 A pinned card that floats over the transcript while a side panel is open was

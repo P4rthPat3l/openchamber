@@ -2768,4 +2768,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'Ajan etkinleştirilemedi: yapılandırma dosyası yazılamadı',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "İstem geçmişinde ara",
 
+  'settings.layout.chat.section.usageLine': "Kullanım satırı",
+  'settings.openchamber.visual.field.composerUsageLine': "Kullanımı yazma alanının altında göster",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Oturumun maliyetini, sağlayıcının kota pencerelerini ve bağlam doluluğunu, Work status paneli açıkken de yazma alanının altında gösterir.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Kullanım satırını yazma alanının altında göster",
 };

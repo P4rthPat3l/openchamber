@@ -4009,4 +4009,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ 탐색 · Enter 불러오기 · Esc 닫기",
   'helpDialog.item.searchPromptHistory': "프롬프트 기록 검색(채팅 입력)",
 
+  'chat.composerUsage.aria': "작성창 사용량",
+  'chat.composerUsage.pin': '작성창에 {provider} 고정',
+  'chat.composerUsage.unpin': '작성창에서 {provider} 고정 해제',
+  'chat.composerUsage.pinFailed': '고정된 제공업체를 저장할 수 없습니다. 다시 시도하세요.',
+  'chat.composerUsage.otherProviders': '{count}개 더 보기',
+  'chat.composerUsage.settings': '사용량 설정',
+  'chat.composerUsage.emptyAt': '{time} 소진 예상',
 };

@@ -69,6 +69,18 @@ const createTestHelpersWithRealSanitizers = () => {
 };
 
 describe('settings helpers', () => {
+  it('AC-015: composer pins round-trip separately from existing provider visibility', () => {
+    const helpers = createTestHelpersWithRealSanitizers();
+    const existing = { usageDropdownProviders: ['codex'] };
+    const parsed = helpers.sanitizeSettingsUpdate({ composerUsagePinnedProviders: ['claude', 'claude', 7] });
+    expect(parsed).toEqual({ composerUsagePinnedProviders: ['claude'] });
+    expect(helpers.mergePersistedSettings(existing, parsed)).toMatchObject({
+      usageDropdownProviders: ['codex'], composerUsagePinnedProviders: ['claude'],
+    });
+    expect(helpers.sanitizeSettingsUpdate({ composerUsagePinnedProviders: [] })).toEqual({ composerUsagePinnedProviders: [] });
+    expect(helpers.sanitizeSettingsUpdate({ composerUsagePinnedProviders: 'claude' })).toEqual({});
+  });
+
   it('sanitizes the optional GitLab OAuth client ID', () => {
     const helpers = createTestHelpers();
     expect(helpers.sanitizeSettingsUpdate({ gitlabClientId: ' client-id ' })).toEqual({ gitlabClientId: 'client-id' });
@@ -963,6 +975,8 @@ describe('settings registry gate', () => {
     sidebarPinLists: [{ id: 'l1', name: 'Release' }], sidebarHiddenSections: ['s1'],
     sidebarProjectDisplayMode: 'all', sidebarViewMode: 'timeline', sidebarListSessionGrouping: 'time', sidebarGrouping: 'time', sidebarKeepWorkInPlace: true, sidebarKeepPinnedInPlace: false, sidebarProjectSortOrder: 'manual',
     workStatusPanelEnabled: true, workStatusHiddenSections: ['mcp'], workStatusHiddenSectionsExplicit: true, workStatusSectionOrder: ['mcp', 'session'], workStatusSectionOrderExplicit: true,
+    composerUsageLineEnabled: true,
+    composerUsagePinnedProviders: ['claude', 'codex'],
     showReasoningTraces: true, streamingAutoFollowEnabled: true, collapsibleThinkingBlocks: true, expandReasoningWhileStreaming: true, showTextJustificationActivity: true,
     chatRenderMode: 'live', activityRenderMode: 'summary', mermaidRenderingMode: 'svg', userMessageRenderingMode: 'markdown', collapsibleUserMessages: true,
     stickyUserHeader: true, promptNavigatorEnabled: true, wideChatLayoutEnabled: true, showSplitAssistantMessageActions: true, showToolFileIcons: true,

@@ -2750,4 +2750,8 @@ export const settingsDict = {
   ...extensionsSettingsI18n.he,
   ...settingsLayoutI18n.he,
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "חיפוש בהיסטוריית ההנחיות",
+  'settings.layout.chat.section.usageLine': "שורת שימוש",
+  'settings.openchamber.visual.field.composerUsageLine': "הצג שימוש מתחת לתיבת הכתיבה",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "מציג את עלות הסשן, את חלונות המכסה של הספק ואת מילוי ההקשר מתחת לתיבת הכתיבה, גם כשפאנל מצב העבודה פתוח.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "הצג את שורת השימוש מתחת לתיבת הכתיבה",
 } as const;

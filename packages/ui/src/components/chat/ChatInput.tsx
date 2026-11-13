@@ -284,6 +284,7 @@ import { useSpacesStore } from '@/lib/spaces/spaces-store';
 import { isDraftSendWaiting, subscribeDraftSendWaiting } from '@/lib/worktrees/pendingDraftWorktree';
 import { ComposerAutocompletePopups } from './composer/ui/ComposerAutocompletePopups';
 import { ComposerFooter } from './composer/ui/ComposerFooter';
+import { ComposerUsageLine } from './composer/usage/ComposerUsageLine';
 import { MobilePillComposer } from './composer/ui/MobilePillComposer';
 import { PromptHistorySearchPanel } from './composer/ui/PromptHistorySearchPanel';
 import { ComposerContextChips } from './composer/ui/ComposerContextChips';
@@ -607,6 +608,7 @@ const ChatInputComponent: React.FC<ChatInputProps> = ({
     // instead of the main session. Collapsed keeps the fork alive (chip stays
     // visible) while the composer talks to the main session again.
     const trustDirectory = currentSessionDirectoryForSync ?? currentDirectory ?? null;
+    const composerUsageLineEnabled = useUIStore((state) => state.composerUsageLineEnabled);
     const trustPausedDirectory = useOpenCodeTrustPaused(trustDirectory) ? trustDirectory : null;
     const btwPanel = useBtwPanelState(currentSessionId, currentSessionDirectoryForSync ?? currentDirectory ?? undefined);
     const pendingForms = useScopedBlockingForms(currentSessionId, currentSessionDirectoryForSync ?? currentDirectory ?? undefined);
@@ -5130,6 +5132,10 @@ const ChatInputComponent: React.FC<ChatInputProps> = ({
             }}
             className={cn(
                 "relative w-full pt-0 pb-4",
+                // Tighter only while the usage line has a pill to show: the
+                // line decides that from its own data, so the form reads it
+                // from the DOM instead of re-rendering for it.
+                !isMobile && 'has-[[data-composer-usage-line]_[data-usage-pill]]:pb-2',
                 isDesktopExpanded && 'flex h-full min-h-0 flex-col pt-4',
                 isMobileExpanded && 'flex h-full min-h-0 flex-col pt-2',
                 isMobile && 'bottom-safe-area oc-mobile-composer'
@@ -5477,6 +5483,13 @@ const ChatInputComponent: React.FC<ChatInputProps> = ({
                 </div>
                 </>
                 )}
+                {composerUsageLineEnabled && !mobileCommentActive && !isBtwActive ? (
+                    <ComposerUsageLine
+                        providerId={currentProviderId}
+                        sessionId={currentSessionId}
+                        directory={currentSessionDirectoryForSync ?? currentDirectory ?? undefined}
+                    />
+                ) : null}
                 {/* Wrapper-level dictation engine + overlay: stays mounted across
                     the pill ↔ composer swap so a recording started from the pill
                     survives the morph. Its absolute overlay covers whichever

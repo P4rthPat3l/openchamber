@@ -4009,6 +4009,13 @@ export const dict = {
   'chat.promptHistorySearch.hint': "↑ ↓ to browse · Enter to load · Esc to close",
   'helpDialog.item.searchPromptHistory': "Search prompt history (chat input)",
 
+  'chat.composerUsage.aria': "Composer usage",
+  'chat.composerUsage.pin': 'Pin {provider} to composer',
+  'chat.composerUsage.unpin': 'Unpin {provider} from composer',
+  'chat.composerUsage.pinFailed': 'Could not save provider pins. Try again.',
+  'chat.composerUsage.otherProviders': '{count} more',
+  'chat.composerUsage.settings': 'Usage settings',
+  'chat.composerUsage.emptyAt': 'Empty {time}',
 } as const;
 
 export type I18nKey = keyof typeof dict;

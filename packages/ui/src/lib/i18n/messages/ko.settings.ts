@@ -2777,4 +2777,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': '에이전트를 활성화하지 못했습니다. 설정 파일에 쓸 수 없습니다',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "프롬프트 기록 검색",
 
+  'settings.layout.chat.section.usageLine': "사용량 줄",
+  'settings.openchamber.visual.field.composerUsageLine': "작성창 아래에 사용량 표시",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "세션 비용, 공급자의 할당량 창, 컨텍스트 사용량을 Work status 패널이 열려 있어도 작성창 아래에 표시합니다.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "작성창 아래에 사용량 줄 표시",
 } as const;

@@ -4010,4 +4010,11 @@ export const dict: Record<I18nKey, string> = {
   'chat.promptHistorySearch.hint': "↑ ↓ для перегляду · Enter для завантаження · Esc для закриття",
   'helpDialog.item.searchPromptHistory': "Пошук в історії запитів (поле чату)",
 
+  'chat.composerUsage.aria': "Використання в полі введення",
+  'chat.composerUsage.pin': 'Закріпити {provider} біля поля введення',
+  'chat.composerUsage.unpin': 'Відкріпити {provider} від поля введення',
+  'chat.composerUsage.pinFailed': 'Не вдалося зберегти закріплених постачальників. Спробуйте ще раз.',
+  'chat.composerUsage.otherProviders': 'Ще: {count}',
+  'chat.composerUsage.settings': 'Налаштування використання',
+  'chat.composerUsage.emptyAt': 'Вичерпання {time}',
 };

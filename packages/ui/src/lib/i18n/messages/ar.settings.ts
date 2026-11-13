@@ -2750,4 +2750,8 @@ export const settingsDict = {
   ...extensionsSettingsI18n.ar,
   ...settingsLayoutI18n.ar,
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "البحث في سجل المطالبات",
+  'settings.layout.chat.section.usageLine': "سطر الاستخدام",
+  'settings.openchamber.visual.field.composerUsageLine': "إظهار الاستخدام أسفل المحرر",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "يعرض تكلفة الجلسة ونوافذ حصة المزوّد وامتلاء السياق أسفل المحرر، حتى أثناء فتح لوحة حالة العمل.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "إظهار سطر الاستخدام أسفل المحرر",
 } as const;

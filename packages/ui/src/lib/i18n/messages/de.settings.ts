@@ -2768,4 +2768,8 @@ export const settingsDict = {
   'settings.agents.sidebar.toast.enableFailed': 'Der Agent konnte nicht aktiviert werden: Die Konfigurationsdatei ließ sich nicht schreiben',
   'settings.openchamber.keyboardShortcuts.action.search_prompt_history.label': "Prompt-Verlauf durchsuchen",
 
+  'settings.layout.chat.section.usageLine': "Nutzungszeile",
+  'settings.openchamber.visual.field.composerUsageLine': "Nutzung unter dem Eingabefeld anzeigen",
+  'settings.openchamber.visual.field.composerUsageLineInfo': "Zeigt die Kosten der Sitzung, die Kontingentfenster des Anbieters und die Kontextauslastung unter dem Eingabefeld, auch wenn das Arbeitsstatus-Panel geöffnet ist.",
+  'settings.openchamber.visual.field.composerUsageLineAria': "Nutzungszeile unter dem Eingabefeld anzeigen",
 };

@@ -413,6 +413,12 @@ export const createSettingsHelpers = (dependencies) => {
     if (typeof candidate.workStatusPanelEnabled === 'boolean') {
       result.workStatusPanelEnabled = candidate.workStatusPanelEnabled;
     }
+    if (candidate.composerUsageLineEnabled === true || candidate.composerUsageLineEnabled === false) {
+      result.composerUsageLineEnabled = candidate.composerUsageLineEnabled;
+    }
+    if (Array.isArray(candidate.composerUsagePinnedProviders)) {
+      result.composerUsagePinnedProviders = normalizeStringArray(candidate.composerUsagePinnedProviders);
+    }
     if (Array.isArray(candidate.workStatusHiddenSections)) {
       // Ids are validated on the client, which owns the section list; here we
       // only guarantee the shape, so a malformed payload cannot land on disk.
